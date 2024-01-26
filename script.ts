@@ -78,3 +78,71 @@ const sectionObservers = new IntersectionObserver(
 if (sectionEles) {
   sectionEles.forEach((sectionEle) => sectionObservers.observe(sectionEle));
 }
+
+//////// TODO: image loading
+const imageList = document.querySelectorAll("img[data-og]");
+let initLoad = true;
+function imageLoading(
+  entries: IntersectionObserverEntry[],
+  observer: IntersectionObserver
+) {
+  if (initLoad) {
+    entries.forEach((ent) => {
+      const imgTg = ent.target as HTMLImageElement;
+      if (ent.isIntersecting) {
+        if (imgTg.dataset?.og) {
+          imgTg.src = imgTg.dataset?.og;
+          imgTg.addEventListener("load", function () {
+            imgTg.classList.remove("blur-md");
+            observer.unobserve(imgTg);
+          });
+          imgTg.addEventListener("error", function () {
+            imgTg.src = "/public/images/0.jpeg";
+          });
+        }
+      }
+    });
+    initLoad = false;
+  }
+  const entry = entries[0];
+  if (entry.isIntersecting) {
+    const imgEle = entry.target as HTMLImageElement;
+    const showImg = imgEle.dataset.og;
+    if (showImg) {
+      imgEle.src = showImg;
+      imgEle.addEventListener("load", function () {
+        imgEle.classList.remove("blur-md");
+        observer.unobserve(entry.target);
+      });
+
+      imgEle.addEventListener("error", function () {
+        imgEle.src = "/public/images/0.jpeg";
+        observer.unobserve(entry.target);
+      });
+    }
+  }
+}
+
+const imgObserverOption: IntersectionObserverInit = {
+  root: null,
+  threshold: 0.3,
+};
+const imgObservers = new IntersectionObserver(imageLoading, imgObserverOption);
+if (imageList) {
+  imageList.forEach((ig) => imgObservers.observe(ig));
+}
+
+/// dialog
+const dialogEle = document.querySelector("dialog");
+const showBtn = document.querySelector("dialog + button");
+const closeBtn = document.querySelector("dialog button");
+console.log(showBtn, "fefe");
+
+showBtn?.addEventListener("click", function () {
+  console.log("??");
+  dialogEle?.showModal();
+});
+
+closeBtn?.addEventListener("click", function () {
+  dialogEle?.close();
+});

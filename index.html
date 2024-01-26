@@ -9,9 +9,11 @@
   </head>
   <body>
     <header class="w-full">
-      <nav class="sticky-nav px-4 py-4 rounded-md">
+      <nav
+        class="flex flex-row justify-between items-center sticky-nav px-4 py-4 rounded-md"
+      >
         <h1 class="italic font-bold text-3xl text-indigo-600">My LOGO</h1>
-        <ul class="flex gap-4">
+        <ul class="hidden md:flex gap-4">
           <li
             class="text-indigo-600 hover:text-indigo-400 trantition-color dureation-300 ease-in-out cursor-pointer"
           >
@@ -28,11 +30,43 @@
             EXAMPLE
           </li>
         </ul>
+
+        <dialog>
+          <div
+            class="flex flex-col px-10 py-10 gap-4 rounded-2xl shadow-2xl justify-center"
+          >
+            <p>This modal dialog has a groovy backdrop!</p>
+            <button
+              autofocus
+              class="block py-2 px-6 bg-black text-white rounded-md"
+            >
+              Close
+            </button>
+          </div>
+        </dialog>
+        <button class="block md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-menu text-indigo-500 h-8 w-8"
+          >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
       </nav>
     </header>
 
     <article
-      class="mx-4 px-10 mt-8 mb-12 rounded-xl shadow-lg bg-slate-400 text-cyan-800 py-20"
+      class="mx-4 px-10 mt-8 mb-12 rounded-xl shadow-lg bg-slate-400/30 text-cyan-800 py-20"
     >
       <h2 class="text-2xl mb-2 uppercase font-bold">Lorem ipsum dolor sit.</h2>
       <p class="text-lg leading-relaxed">
@@ -46,18 +80,23 @@
         laboriosam aliquid natus maiores? Mollitia, soluta sunt odit asperiores
         minus iure nemo nostrum, dolore deserunt nisi, cupiditate natus
         perspiciatis dolorem magnam tempore? Dolorem in voluptatum facere eum,
-        minus nihil soluta recusandae impedit voluptatibus!
+        minus nihil soluta recusandae impedit voluptatibus! Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Velit ratione dolorem
+        necessitatibus voluptatem corporis voluptatum quaerat ducimus, rem
+        maiores, error in delectus atque consequatur dolore quae repellat
+        quibusdam, ipsum perferendis!
       </p>
     </article>
 
     <section
-      class="flex flex-col items-center rounded-md bg-teal-300/60 mx-4 my-12 py-8"
+      class="flex flex-col items-center rounded-md bg-violet-300/30 mx-4 my-12 py-8"
     >
       <div class="flex flex-col px-0 shrink-0 py-2">
         <img
-          src="./public/images/1.jpeg"
+          src="./public/images/0.jpeg"
+          data-og="./public/images/1.jpeg"
           alt="yerin 1"
-          class="h-96 w-96 object-scale-down px-4"
+          class="blur-md h-96 w-96 object-scale-down px-4"
         />
         <ul class="flex gap-2 justify-center text-sm">
           <li>Facebook</li>
@@ -70,19 +109,23 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
           voluptatem, distinctio totam minus accusantium qui quam nemo
           asperiores. Sit dolorem voluptates tempora, obcaecati vitae maiores
-          itaque perspiciatis. Quae, harum. Id.
+          itaque perspiciatis. Quae, harum. Id. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Fugit minus unde explicabo repudiandae
+          eum repellat commodi, amet optio ad reprehenderit deserunt quae nulla
+          minima debitis fuga quod incidunt vel reiciendis.
         </p>
       </div>
     </section>
 
     <section
-      class="flex items-center rounded-md bg-cyan-300/60 mx-4 my-12 py-8"
+      class="flex flex-col md:flex-row items-center rounded-md bg-cyan-300/20 mx-4 my-12 py-8"
     >
       <div class="flex flex-col px-0 shrink-0">
         <img
-          src="./public/images/2.jpeg"
+          src="./public/images/0.jpeg"
+          data-og="./public/images/2.jpeg"
           alt="yerin 2"
-          class="h-80 w-80 object-scale-down px-4"
+          class="blur-md h-80 w-80 object-scale-down px-4"
         />
         <ul class="flex gap-2 justify-center text-sm">
           <li>Facebook</li>
@@ -95,19 +138,23 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
           voluptatem, distinctio totam minus accusantium qui quam nemo
           asperiores. Sit dolorem voluptates tempora, obcaecati vitae maiores
-          itaque perspiciatis. Quae, harum. Id.
+          itaque perspiciatis. Quae, harum. Id. Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Ullam ducimus officiis cumque ad odit
+          cum quae ratione mollitia esse vel quam illo, eum obcaecati fugiat
+          excepturi ea sed sint alias.
         </p>
       </div>
     </section>
 
     <section
-      class="flex items-center rounded-md bg-fuchsia-300/60 mx-4 my-12 py-8"
+      class="flex-col md:flex-row flex items-center rounded-md bg-yellow-300/20 mx-4 my-12 py-8"
     >
       <div class="flex flex-col px-0 shrink-0">
         <img
-          src="./public/images/3.avif"
+          src="./public/images/0.jpeg"
+          data-og="./public/images/3.avif"
           alt="yerin 3"
-          class="h-80 w-80 object-scale-down px-4"
+          class="blur-md h-80 w-80 object-scale-down px-4"
         />
         <ul class="flex gap-2 justify-center text-sm">
           <li>Facebook</li>
@@ -120,19 +167,24 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
           voluptatem, distinctio totam minus accusantium qui quam nemo
           asperiores. Sit dolorem voluptates tempora, obcaecati vitae maiores
-          itaque perspiciatis. Quae, harum. Id.
+          itaque perspiciatis. Quae, harum. Id. Lorem ipsum dolor, sit amet
+          consectetur adipisicing elit. Quam autem nulla ipsum. Ullam
+          reprehenderit impedit necessitatibus veritatis excepturi? Cum illum
+          aperiam ducimus quae culpa similique ex asperiores, itaque natus
+          voluptates.
         </p>
       </div>
     </section>
 
     <section
-      class="flex items-center rounded-md bg-rose-300/60 mx-4 my-12 py-8"
+      class="flex-col md:flex-row flex items-center rounded-md bg-rose-300/20 mx-4 my-12 py-8"
     >
       <div class="flex flex-col px-0 shrink-0">
         <img
-          src="./public/images/4.jpeg"
+          src="./public/images/0.jpeg"
+          data-og="./public/images/4.jpeg"
           alt="yerin 4"
-          class="h-80 w-80 object-scale-down px-4"
+          class="blur-md h-80 w-80 object-scale-down px-4"
         />
         <ul class="flex gap-2 justify-center text-sm">
           <li>Facebook</li>
@@ -145,7 +197,10 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
           voluptatem, distinctio totam minus accusantium qui quam nemo
           asperiores. Sit dolorem voluptates tempora, obcaecati vitae maiores
-          itaque perspiciatis. Quae, harum. Id.
+          itaque perspiciatis. Quae, harum. Id. Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Tempore, enim? Est atque temporibus
+          provident autem quasi cumque minima! Soluta sit deleniti incidunt
+          explicabo eius enim sed labore nisi, atque corrupti.
         </p>
       </div>
     </section>
